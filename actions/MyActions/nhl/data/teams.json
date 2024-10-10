@@ -1,0 +1,130 @@
+[
+    {
+        "team_name": "New Jersey Devils",
+        "team_abbreviation": "NJD"
+    },
+    {
+        "team_name": "New York Rangers",
+        "team_abbreviation": "NYR"
+    },
+    {
+        "team_name": "Winnipeg Jets",
+        "team_abbreviation": "WPG"
+    },
+    {
+        "team_name": "Vegas Golden Knights",
+        "team_abbreviation": "VGK"
+    },
+    {
+        "team_name": "Utah Hockey Club",
+        "team_abbreviation": "UTA"
+    },
+    {
+        "team_name": "Florida Panthers",
+        "team_abbreviation": "FLA"
+    },
+    {
+        "team_name": "St. Louis Blues",
+        "team_abbreviation": "STL"
+    },
+    {
+        "team_name": "Montréal Canadiens",
+        "team_abbreviation": "MTL"
+    },
+    {
+        "team_name": "Calgary Flames",
+        "team_abbreviation": "CGY"
+    },
+    {
+        "team_name": "Vancouver Canucks",
+        "team_abbreviation": "VAN"
+    },
+    {
+        "team_name": "Anaheim Ducks",
+        "team_abbreviation": "ANA"
+    },
+    {
+        "team_name": "Carolina Hurricanes",
+        "team_abbreviation": "CAR"
+    },
+    {
+        "team_name": "Columbus Blue Jackets",
+        "team_abbreviation": "CBJ"
+    },
+    {
+        "team_name": "Dallas Stars",
+        "team_abbreviation": "DAL"
+    },
+    {
+        "team_name": "Detroit Red Wings",
+        "team_abbreviation": "DET"
+    },
+    {
+        "team_name": "Los Angeles Kings",
+        "team_abbreviation": "LAK"
+    },
+    {
+        "team_name": "Minnesota Wild",
+        "team_abbreviation": "MIN"
+    },
+    {
+        "team_name": "Nashville Predators",
+        "team_abbreviation": "NSH"
+    },
+    {
+        "team_name": "New York Islanders",
+        "team_abbreviation": "NYI"
+    },
+    {
+        "team_name": "Ottawa Senators",
+        "team_abbreviation": "OTT"
+    },
+    {
+        "team_name": "Philadelphia Flyers",
+        "team_abbreviation": "PHI"
+    },
+    {
+        "team_name": "San Jose Sharks",
+        "team_abbreviation": "SJS"
+    },
+    {
+        "team_name": "Tampa Bay Lightning",
+        "team_abbreviation": "TBL"
+    },
+    {
+        "team_name": "Washington Capitals",
+        "team_abbreviation": "WSH"
+    },
+    {
+        "team_name": "Seattle Kraken",
+        "team_abbreviation": "SEA"
+    },
+    {
+        "team_name": "Toronto Maple Leafs",
+        "team_abbreviation": "TOR"
+    },
+    {
+        "team_name": "Boston Bruins",
+        "team_abbreviation": "BOS"
+    },
+    {
+        "team_name": "Chicago Blackhawks",
+        "team_abbreviation": "CHI"
+    },
+    {
+        "team_name": "Colorado Avalanche",
+        "team_abbreviation": "COL"
+    },
+    {
+        "team_name": "Edmonton Oilers",
+        "team_abbreviation": "EDM"
+    },
+    {
+        "team_name": "Pittsburgh Penguins",
+        "team_abbreviation": "PIT"
+    },
+    {
+        "team_name": "Buffalo Sabres",
+        "team_abbreviation": "BUF"
+    }
+]

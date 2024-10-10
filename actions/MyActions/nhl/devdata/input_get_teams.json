@@ -1,0 +1,15 @@
+{
+    "inputs": [
+        {
+            "inputName": "input-1",
+            "inputValue": {}
+        }
+    ],
+    "metadata": {
+        "actionName": "get_teams",
+        "actionRelativePath": "actions.py",
+        "schemaDescription": [],
+        "managedParamsSchemaDescription": {},
+        "inputFileVersion": "v2"
+    }
+}

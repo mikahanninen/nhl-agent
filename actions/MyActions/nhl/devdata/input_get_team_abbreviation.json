@@ -1,0 +1,19 @@
+{
+    "inputs": [
+        {
+            "inputName": "input-1",
+            "inputValue": {
+                "query": "nash"
+            }
+        }
+    ],
+    "metadata": {
+        "actionName": "get_team_abbreviation",
+        "actionRelativePath": "actions.py",
+        "schemaDescription": [
+            "query: string: team name or abbreviation"
+        ],
+        "managedParamsSchemaDescription": {},
+        "inputFileVersion": "v2"
+    }
+}

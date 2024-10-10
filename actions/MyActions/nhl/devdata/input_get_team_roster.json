@@ -1,0 +1,21 @@
+{
+    "inputs": [
+        {
+            "inputName": "input-1",
+            "inputValue": {
+                "abbreviation": "NSH",
+                "refresh": false
+            }
+        }
+    ],
+    "metadata": {
+        "actionName": "get_team_roster",
+        "actionRelativePath": "actions.py",
+        "schemaDescription": [
+            "abbreviation: string: team abbreviation",
+            "refresh: boolean: whether to refresh the roster"
+        ],
+        "managedParamsSchemaDescription": {},
+        "inputFileVersion": "v2"
+    }
+}

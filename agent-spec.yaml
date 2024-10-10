@@ -1,0 +1,22 @@
+agent-package:
+  spec-version: v2
+  agents:
+  - name: NHL Agent
+    description: New Agent Description
+    model:
+      provider: OpenAI
+      name: gpt-4o
+    version: 0.0.1
+    architecture: agent
+    reasoning: disabled
+    runbook: runbook.md
+    action-packages:
+    - name: nhl
+      organization: MyActions
+      version: 0.0.1
+      path: MyActions/nhl
+      type: folder
+      whitelist: ''
+    knowledge: []
+    metadata:
+      mode: conversational
