@@ -46,8 +46,7 @@ def get_teams() -> Response[str]:
     return teams
 
 
-@action
-def get_team_abbreviation(query: str) -> Response[str]:
+def get_team_abbreviation(query: str) -> str:
     """Get team abbreviation by query.
 
     Args:
@@ -65,23 +64,27 @@ def get_team_abbreviation(query: str) -> Response[str]:
             or query.lower() in team["team_abbreviation"].lower()
         ):
             return team["team_abbreviation"]
-    return "Team not found"
+    raise ValueError("Team not found")
 
 
 @action
-def get_team_roster(abbreviation: str, refresh: bool = False) -> Response[str]:
+def get_team_roster(
+    team_name_or_abbreviation: str, refresh: bool = False
+) -> Response[str]:
     """Get team roster by abbreviation.
 
     Args:
-        abbreviation: team abbreviation
+        team_name_or_abbreviation: team abbreviation
         refresh: whether to refresh the roster
     Returns:
         list of players in the team
     """
+    abbreviation = get_team_abbreviation(team_name_or_abbreviation)
     url = f"{BASE_URL}/roster/{abbreviation}/current"
     response = requests.get(url)
     response.raise_for_status()
     data = response.json()
+    remove_headshot(data)
     if not data:
         raise ActionError(f"Team {abbreviation} not found")
     write_data_to_json(data, f"team_{abbreviation}_roster")
@@ -108,3 +111,14 @@ def get_player_by_id(player_id: int) -> Response[str]:
     response.raise_for_status()
     player = response.json()
     return player
+
+
+def remove_headshot(data):
+    if isinstance(data, dict):
+        if "headshot" in data:
+            del data["headshot"]
+        for key, value in data.items():
+            remove_headshot(value)
+    elif isinstance(data, list):
+        for item in data:
+            remove_headshot(item)
