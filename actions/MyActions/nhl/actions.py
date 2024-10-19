@@ -122,3 +122,149 @@ def remove_headshot(data):
     elif isinstance(data, list):
         for item in data:
             remove_headshot(item)
+
+
+def remove_teamlogo(data):
+    if isinstance(data, dict):
+        if "teamLogo" in data:
+            del data["teamLogo"]
+        for key, value in data.items():
+            remove_teamlogo(value)
+    elif isinstance(data, list):
+        for item in data:
+            remove_teamlogo(item)
+
+
+@action
+def get_team_scoreboard(team_name_or_abbreviation: str) -> Response[str]:
+    """Get team scoreboard
+
+    Args:
+        team_name_or_abbreviation: team abbreviation
+    Returns:
+        scoreboard of the team
+    """
+    abbreviation = get_team_abbreviation(team_name_or_abbreviation)
+    url = f"{BASE_URL}/scoreboard/{abbreviation}/now"
+    response = requests.get(url)
+    response.raise_for_status()
+    data = response.json()
+    if not data:
+        raise ActionError(f"Team {abbreviation} not found")
+    return data
+
+
+@action
+def get_standings_now() -> Response[str]:
+    """Get standings now
+
+
+    Returns:
+        standings
+    """
+    url = f"{BASE_URL}/standings/now"
+    response = requests.get(url)
+    response.raise_for_status()
+    data = response.json()
+    # TODO. lot of data returned and needs to be filtered and formatted as a table
+    return data
+
+
+@action
+def get_goalie_stat_leaders() -> Response[str]:
+    """Get goalie stat leaders
+
+    Returns:
+        goalier stats
+    """
+    url = f"{BASE_URL}/goalie-stats-leaders/current"
+    response = requests.get(url)
+    response.raise_for_status()
+    data = response.json()
+    remove_headshot(data)
+    remove_teamlogo(data)
+    return data
+
+
+@action
+def get_skater_stat_leaders() -> Response[str]:
+    """Get skater stat leaders
+
+    Returns:
+        skater stats
+    """
+    url = f"{BASE_URL}/skater-stats-leaders/current"
+    response = requests.get(url)
+    response.raise_for_status()
+    data = response.json()
+    remove_headshot(data)
+    remove_teamlogo(data)
+    return data
+
+
+@action
+def get_team_stats(team_name_or_abbreviation: str) -> Response[str]:
+    """Get team stats
+
+    Args:
+        team_name_or_abbreviation: team abbreviation
+    Returns:
+        stats of the team
+    """
+    abbreviation = get_team_abbreviation(team_name_or_abbreviation)
+    url = f"{BASE_URL}/club-stats/{abbreviation}/now"
+    response = requests.get(url)
+    response.raise_for_status()
+    data = response.json()
+    remove_headshot(data)
+    remove_teamlogo(data)
+    if not data:
+        raise ActionError(f"Team {abbreviation} not found")
+    return data
+
+
+@action
+def get_team_schedule(team_name_or_abbreviation: str) -> Response[str]:
+    """Get team schedule
+
+    Args:
+        team_name_or_abbreviation: team abbreviation
+    Returns:
+        schedule of the team
+    """
+    abbreviation = get_team_abbreviation(team_name_or_abbreviation)
+    url = f"{BASE_URL}/club-schedule-season/{abbreviation}/now"
+    response = requests.get(url)
+    response.raise_for_status()
+    data = response.json()
+    if not data:
+        raise ActionError(f"Team {abbreviation} not found")
+    return data
+
+
+@action
+def get_daily_scores() -> Response[str]:
+    """Get daily scores
+
+    Returns:
+        daily scores
+    """
+    url = f"{BASE_URL}/score/now"
+    response = requests.get(url)
+    response.raise_for_status()
+    data = response.json()
+    return data
+
+
+@action
+def get_scoreboard() -> Response[str]:
+    """Get scoreboard
+
+    Returns:
+        scoreboard
+    """
+    url = f"{BASE_URL}/scoreboard/now"
+    response = requests.get(url)
+    response.raise_for_status()
+    data = response.json()
+    return data
